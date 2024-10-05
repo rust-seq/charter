@@ -7,7 +7,7 @@ related initiatives:
 
 - Creating the `rust-seq` stack: a collection of community-developed libraries
   and tooling (written in Rust) that are collaboratively developed to provide a
-  high-quality, symbiotic foundation for omics-based analysis tools.
+  high-quality, synergistic foundation for omics-based analysis tools.
 - Developing asyncronous mechanisms for identifying gaps in the ecosystem and
   facilitating community discussion around those gaps (e.g., "what crates _need_
   to exist but don't yet?").

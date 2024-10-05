@@ -5,10 +5,10 @@ The following are values for any crates adopted in the `rust-seq` stack.
 ## Correctness
 
 Most fundamentally, software in the `rust-seq` stack is designed to produce
-correct results or error with reasonable error messages when producing correct
+correct results or to error with reasonable error messages when producing correct
 results is not possible. We collectively believe that bioinformatics tools today
-are fragile and all too often either (a) silently fail or (b) return unhelpful
-information when failures occur. Eliminating these modes of failure in omics
+are unnecessarily fragile and all too often either (a) silently fail or (b) return 
+unhelpful information when failures occur. Eliminating these modes of failure in omics
 development and analyses is one of the primary reasons the project was created.
 
 To that end, correctness should be considered the highest priority of crates in
@@ -22,11 +22,15 @@ unlikely to be widely adopted and used. As such, there is a high emphasis on
 optimization and benchmarking for crates in the `rust-seq` stack. Changes that
 introduce regressions in performance are unlikely to be accepted (unless the
 case is sufficiently demonstrated that a new feature is worth the cost of a
-performance hit).
+performance hit).  Likewise, if a `rust-seq` create is created to provide 
+or mimic functionality that is provided in a library within some other language
+(e.g. C, C++, Go, etc.), it is expected, in general, that the `rust-seq` 
+implementation will be similarly (or more) performant than the library
+providing this functionality in another language.
 
 # Contributable
 
-Crates in the `rust-seq` stack are designed to be contributed to be the
+Crates in the `rust-seq` stack are designed to be contributed to the
 community. Though one individual may carry the vision for a particular crate in
 the beginning, it should be possible for anyone to take a few hours to
 grok a crate's design, develop a set of improvements, and then submit those
@@ -45,6 +49,11 @@ crates necessitates many common practices, including:
   largely by enabling the [`missing_docs`],
   [`clippy::missing_docs_in_private_items`], and
   [`rustdoc::missing_doc_code_examples`] lints.
+- All crates are **freely-licensed** to enable them to be adopted within other 
+  projects and to be used in the broadest variety of contexts.  Thus, while 
+  different crates may adopt different specific licenses (e.g. BSD, MIT, etc.),
+  crates with commercial, "free for non-commercial use", and "viral copyleft"
+  (e.g. GPL) licenses will not be considered barring extraordanary circumstances.
 
 All of the above should be independently verified and readily reported by
 continuous integration processes on PRs to ensure that contributors can iterate
