@@ -1,6 +1,0 @@
-[book]
-authors = ["The Rust-Seq Developers"]
-language = "en"
-multilingual = false
-src = "src"
-title = "Rust-Seq Charter"
