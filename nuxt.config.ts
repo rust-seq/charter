@@ -4,10 +4,12 @@ export default defineNuxtConfig({
   css: ["~/assets/css/main.css"],
   devtools: { enabled: true },
   modules: [
-    "@nuxtjs/tailwindcss",
     "nuxt-lucide-icons",
-    "@nuxtjs/color-mode",
     "@nuxt/content",
+    "@nuxt/ui",
+    "@nuxt/icon",
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/color-mode",
   ],
   content: {
     documentDriven: true,

@@ -7,9 +7,9 @@
     </div>
     <div class="links">
       <div class="header">Get Started</div>
-      <RouterLink to="/docs/overview">Overview</RouterLink>
-      <RouterLink to="/docs/values">Values</RouterLink>
-      <RouterLink to="/docs/stack">Stack</RouterLink>
+      <RouterLink to="/docs/get-started/overview">Overview</RouterLink>
+      <RouterLink to="/docs/get-started/values">Values</RouterLink>
+      <RouterLink to="/docs/get-started/stack">Stack</RouterLink>
     </div>
   </div>
 </template>

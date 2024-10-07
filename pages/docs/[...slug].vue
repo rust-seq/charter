@@ -1,5 +1,6 @@
-<script setup>
+<script setup lang="ts">
 import { createError, useAsyncData, useRoute } from "nuxt/app";
+import { sentenceCase } from "change-case";
 
 const route = useRoute();
 
@@ -16,6 +17,42 @@ if (!data.value) {
 }
 
 let toc = data.value.body.toc;
+let links = route.path.split("/").slice(2);
+let last = links.pop();
+
+let breadcrumbs = [
+  {
+    label: "Docs",
+    icon: "i-heroicons-book-open",
+    to: "/docs",
+  },
+];
+
+const lookup = {
+  "get-started": {
+    label: "Get Started",
+    icon: "i-heroicons-presentation-chart-line",
+  },
+};
+
+for (var link of links) {
+  let value = lookup[link];
+
+  if (value === undefined) {
+    throw createError({
+      statusCode: 500,
+      statusMessage: "Unknown breadcrumb",
+      fatal: true,
+    });
+  }
+
+  breadcrumbs.push(value);
+}
+
+breadcrumbs.push({
+  label: sentenceCase(last),
+  icon: "i-heroicons-newspaper",
+});
 </script>
 
 <template>
@@ -23,9 +60,12 @@ let toc = data.value.body.toc;
     <DocsLeftSidebar />
     <div class="content">
       <main>
-        <article>
-          <ContentRenderer :value="data" />
-        </article>
+        <div>
+          <UBreadcrumb :links="breadcrumbs" />
+          <article>
+            <ContentRenderer :value="data" />
+          </article>
+        </div>
       </main>
       <aside>
         <DocsRightSidebar :toc="toc" />
@@ -63,6 +103,8 @@ let toc = data.value.body.toc;
         @apply prose;
         @apply prose-slate;
         @apply dark:prose-invert;
+
+        @apply py-8;
 
         /* Prose Code */
         @apply prose-code:rounded-md;
