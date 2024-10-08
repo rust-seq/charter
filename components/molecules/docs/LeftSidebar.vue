@@ -9,7 +9,9 @@
       <div class="header">Get Started</div>
       <RouterLink to="/docs/get-started/overview">Overview</RouterLink>
       <RouterLink to="/docs/get-started/values">Values</RouterLink>
-      <RouterLink to="/docs/get-started/stack">Stack</RouterLink>
+
+      <div class="header">Writing Crates</div>
+      <RouterLink to="/docs/writing-crates/checklist">Checklist</RouterLink>
     </div>
   </div>
 </template>
@@ -96,6 +98,10 @@
       @apply tracking-wide;
       @apply text-gray-800;
       @apply dark:text-gray-200;
+    }
+
+    .header:not(:first-child) {
+      @apply mt-5;
     }
 
     a {

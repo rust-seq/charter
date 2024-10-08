@@ -28,17 +28,26 @@ let breadcrumbs = [
   },
 ];
 
-const lookup = {
+const sections = {
   "get-started": {
     label: "Get Started",
     icon: "i-heroicons-presentation-chart-line",
   },
+
+  "writing-crates": {
+    label: "Writing Crates",
+    icon: "i-heroicons-pencil-square",
+  },
+};
+
+const pages = {
+  "file-io": "File I/O",
 };
 
 for (var link of links) {
-  let value = lookup[link];
+  let section = sections[link];
 
-  if (value === undefined) {
+  if (section === undefined) {
     throw createError({
       statusCode: 500,
       statusMessage: "Unknown breadcrumb",
@@ -46,18 +55,20 @@ for (var link of links) {
     });
   }
 
-  breadcrumbs.push(value);
+  breadcrumbs.push(section);
 }
 
+let page = pages[last] || sentenceCase(last);
+
 breadcrumbs.push({
-  label: sentenceCase(last),
+  label: page,
   icon: "i-heroicons-newspaper",
 });
 </script>
 
 <template>
   <div class="docs">
-    <DocsLeftSidebar />
+    <MoleculesDocsLeftSidebar />
     <div class="content">
       <main>
         <div>
@@ -68,7 +79,7 @@ breadcrumbs.push({
         </div>
       </main>
       <aside>
-        <DocsRightSidebar :toc="toc" />
+        <MoleculesDocsRightSidebar :toc="toc" />
       </aside>
     </div>
   </div>
@@ -93,7 +104,7 @@ breadcrumbs.push({
       @apply flex;
       @apply h-full;
 
-      @apply overflow-scroll;
+      @apply overflow-auto;
 
       @apply px-16;
       @apply mx-10;
@@ -105,18 +116,6 @@ breadcrumbs.push({
         @apply dark:prose-invert;
 
         @apply py-8;
-
-        /* Prose Code */
-        @apply prose-code:rounded-md;
-        @apply prose-code:px-2;
-        @apply prose-code:py-1;
-        @apply prose-code:before:content-none;
-        @apply prose-code:after:content-none;
-
-        @apply prose-code:text-slate-900;
-        @apply prose-code:bg-slate-100;
-        @apply dark:prose-code:text-slate-100;
-        @apply dark:prose-code:bg-slate-800;
 
         @apply max-w-3xl;
 

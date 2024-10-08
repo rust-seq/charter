@@ -1,7 +1,9 @@
+import remarkGfm from "remark-gfm";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
-  css: ["~/assets/css/main.css"],
+  css: ["~/assets/css/main.postcss"],
   devtools: { enabled: true },
   modules: [
     "nuxt-lucide-icons",
@@ -13,6 +15,10 @@ export default defineNuxtConfig({
   ],
   content: {
     documentDriven: true,
+    markdown: {
+      remarkPlugins: [remarkGfm],
+      rehypePlugins: [],
+    },
   },
   router: {
     options: {

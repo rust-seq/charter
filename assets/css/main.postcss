@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=");
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&Space+Grotesk:wght@300..700&display=swap");
+
+/* Prose Code */
+* {
+  @apply prose-code:rounded-md;
+  @apply prose-code:px-2;
+  @apply prose-code:py-1;
+
+  @apply prose-code:text-slate-900;
+  @apply prose-code:bg-slate-100;
+  @apply dark:prose-code:text-slate-100;
+  @apply dark:prose-code:bg-slate-800;
+}
+
+code::before,
+code::after {
+  content: none !important;
+}

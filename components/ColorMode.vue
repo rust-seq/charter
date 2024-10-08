@@ -14,6 +14,4 @@ enum Mode {
   Dark = "dark",
   System = "system",
 }
-
-colorMode.preference = Mode.System;
 </script>
