@@ -1,5 +1,5 @@
 <template>
-  <div class="flex h-full w-full">
+  <div class="flex h-full w-full dark:bg-slate-950">
     <MoleculesDocsLeftSidebar />
     <div class="px-16 py-10 h-full w-full">
       <div class="prose dark:prose-invert max-w-6xl pt-4 pb-7">
@@ -106,59 +106,3 @@ import { Kind } from "~/components/molecules/docs/crate-card/kind";
 
 const alertVisible = ref(true);
 </script>
-
-<style scope lang="postcss">
-.card {
-  @apply transition;
-
-  @apply hover:-translate-y-0.5;
-
-  @apply px-6;
-  @apply py-4;
-
-  @apply bg-white;
-
-  @apply text-slate-900;
-
-  @apply border;
-  @apply border-gray-100;
-
-  @apply rounded-lg;
-  @apply shadow-sm;
-  @apply hover:shadow-md;
-
-  @apply text-pretty;
-
-  .header {
-    @apply flex justify-between items-center;
-
-    .title {
-      @apply flex justify-start items-center;
-      @apply gap-x-1;
-
-      @apply font-bold;
-      font-size: 14px;
-      @apply text-slate-600;
-
-      span {
-        /* Color of the icon. */
-        @apply bg-slate-600;
-      }
-    }
-  }
-
-  .crate {
-    font-family: "Space Mono";
-    font-weight: 400;
-  }
-
-  .description {
-    @apply pt-1;
-
-    @apply text-gray-600;
-    @apply text-sm;
-
-    @apply text-start;
-  }
-}
-</style>

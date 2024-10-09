@@ -16,7 +16,7 @@ export default defineNuxtConfig({
   content: {
     documentDriven: true,
     markdown: {
-      remarkPlugins: [remarkGfm],
+      remarkPlugins: { "remark-gfm": remarkGfm },
       rehypePlugins: [],
     },
   },
