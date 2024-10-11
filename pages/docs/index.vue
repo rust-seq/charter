@@ -62,6 +62,55 @@
           />
 
           <CrateCard
+            name="minimizer-queue"
+            organization="rust-seq"
+            description="A
+          crate for fast computation of minimizers of 
+          a sequence using a monotone queue."
+            :kind="Kind.Library"
+            :category="{
+              name: 'Sequence Algorithms',
+              icon: 'heroicons-outline:newspaper',
+            }"
+            :socials="{
+              github: 'https://github.com/rust-seq/minimizer-queue',
+              zulip: true,
+            }"
+          />
+
+          <CrateCard
+            name="minimizer-iter"
+            organization="rust-seq"
+            description="A
+          crate for efficient iteration of the minimizers of a sequence."
+            :kind="Kind.Library"
+            :category="{
+              name: 'Sequence Algorithms',
+              icon: 'heroicons-outline:newspaper',
+            }"
+            :socials="{
+              github: 'https://github.com/rust-seq/minimizer-iter',
+              zulip: true,
+            }"
+          />
+
+          <CrateCard
+            name="packed-seq"
+            organization="rust-seq"
+            description="A
+          crate for efficient (packed) representation of strings of small alphabets."
+            :kind="Kind.Library"
+            :category="{
+              name: 'Sequence Algorithms',
+              icon: 'heroicons-outline:newspaper',
+            }"
+            :socials="{
+              github: 'https://github.com/rust-seq/packed-seq',
+              zulip: true,
+            }"
+          />
+
+          <CrateCard
             name="foobar"
             organization="stjude-rust-labs"
             description="A
