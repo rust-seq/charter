@@ -20,11 +20,33 @@ const props = defineProps<{
 <style scoped lang="postcss">
 h4 {
   @apply font-bold;
+
   font-size: 14px;
+
   @apply pb-1;
 }
 
-ul > li:not(:last-child) {
-  @apply pb-0.5;
+ul {
+  @apply w-full;
+
+  li {
+    @apply w-full;
+    @apply rounded-sm;
+
+    @apply hover:bg-slate-100;
+    @apply dark:hover:bg-slate-900;
+    @apply dark:hover:text-slate-50;
+
+    a {
+      @apply block;
+      font-size: 14px;
+      @apply pl-2;
+      @apply text-inherit;
+    }
+  }
+
+  li:not(:last-child) {
+    padding-bottom: 2px;
+  }
 }
 </style>

@@ -13,9 +13,56 @@
   @apply dark:prose-code:bg-slate-800;
 }
 
-
-
 code::before,
 code::after {
   content: none !important;
+}
+
+/**
+ * Documentation Formatting (Globally Applied)
+ **/
+
+.docs {
+  @apply flex;
+  @apply w-full;
+  @apply h-full;
+
+  .content {
+    @apply flex;
+    @apply w-full;
+    @apply h-full;
+
+    @apply pt-16;
+
+    @apply dark:bg-slate-950;
+
+    main {
+      @apply flex;
+      @apply h-full;
+
+      @apply overflow-auto;
+
+      @apply px-16;
+      @apply mx-10;
+
+      article {
+        /* Prose */
+        @apply prose;
+        @apply prose-slate;
+        @apply dark:prose-invert;
+
+        @apply py-8;
+
+        @apply max-w-3xl;
+
+        :where(a) {
+          @apply no-underline;
+        }
+      }
+
+      aside {
+        @apply dark:text-white;
+      }
+    }
+  }
 }
