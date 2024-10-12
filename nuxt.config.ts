@@ -5,6 +5,9 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   css: ["~/assets/css/main.postcss"],
   devtools: { enabled: true },
+  app: {
+    baseURL: "/docs",
+  },
   modules: [
     "nuxt-lucide-icons",
     "@nuxt/content",
@@ -15,7 +18,6 @@ export default defineNuxtConfig({
     "@nuxt/image",
   ],
   content: {
-    documentDriven: true,
     markdown: {
       remarkPlugins: { "remark-gfm": remarkGfm },
       rehypePlugins: [],
