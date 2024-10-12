@@ -14,12 +14,22 @@
           title="Organizing the community around what needs built."
           description="Though our RFC process, we outline crates that need to be created
           along with who will create them."
+          url="https://example.com"
+          :overlay="{
+            title: 'Learn how we do it!',
+            description: 'Click here to learn about our RFC process.',
+          }"
         >
         </FrontPageCard>
         <FrontPageCard
           step="2"
           title="Bringing the community together on Zulip."
           description="Foo bar baz quux qil."
+          url="https://rustseq.zulipchat.com/join/coxb7c7b3bbahlfx7poeqqrd"
+          :overlay="{
+            title: 'Join us!',
+            description: 'Click here to join the Zulip server.',
+          }"
         ></FrontPageCard>
       </div>
     </main>

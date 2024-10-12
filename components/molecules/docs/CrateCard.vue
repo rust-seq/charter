@@ -10,30 +10,40 @@
           <div class="ml-1 font-normal text-xs font-mono">
             <div
               class="px-1 py-0.5 rounded-md text-green-900 dark:text-green-300 bg-green-300 dark:bg-green-900 border border-green-500"
-              v-if="kind === Kind.Library">
+              v-if="kind === Kind.Library"
+            >
               lib
             </div>
             <div
               class="px-1 py-0.5 rounded-md text-purple-900 dark:text-purple-300 bg-purple-300 dark:bg-purple-900 border border-purple-500"
-              v-else-if="kind === Kind.Binary">
+              v-else-if="kind === Kind.Binary"
+            >
               bin
             </div>
           </div>
         </div>
         <div class="flex gap-x-1.5">
-          <a v-if="socials && socials.github"
+          <a
+            v-if="socials && socials.github"
             class="flex items-center justify-center w-7 h-7 bg-gray-100 dark:bg-slate-950 border border-gray-200 rounded-full"
-            :href="socials.github">
+            :href="socials.github"
+          >
             <Icon class="w-4 h-4" name="octicon:mark-github-16"></Icon>
           </a>
-          <a v-if="socials && socials.docs"
+          <a
+            v-if="socials && socials.docs"
             class="flex items-center justify-center w-7 h-7 bg-gray-100 dark:bg-slate-950 border border-gray-200 rounded-full"
-            :href="socials.docs" :title="`Chat about ${name} in the rust-seq Zulip`">
+            :href="socials.docs"
+            :title="`Chat about ${name} in the rust-seq Zulip`"
+          >
             <Icon class="w-4 h-4" name="heroicons-outline:book-open"></Icon>
           </a>
-          <a v-if="socials && socials.zulip"
+          <a
+            v-if="socials && socials.zulip"
             class="flex items-center justify-center w-7 h-7 bg-gray-100 dark:bg-slate-950 border border-gray-200 rounded-full"
-            href="https://rustseq.zulipchat.com" :title="`Chat about ${name} in the rust-seq Zulip`">
+            href="https://rustseq.zulipchat.com/join/coxb7c7b3bbahlfx7poeqqrd/"
+            :title="`Chat about ${name} in the rust-seq Zulip`"
+          >
             <Icon class="w-4 h-4" name="tabler:brand-zulip"></Icon>
           </a>
         </div>
@@ -48,12 +58,8 @@
     <div class="terminal">
       <div class="command">
         <span class="prompt">$</span>
-        <span v-if="kind === Kind.Library">
-          cargo add {{ name }}
-        </span>
-        <span v-if="kind === Kind.Binary">
-          cargo install {{ name }}
-        </span>
+        <span v-if="kind === Kind.Library"> cargo add {{ name }} </span>
+        <span v-if="kind === Kind.Binary"> cargo install {{ name }} </span>
       </div>
       <Icon class="copy" name="heroicons-outline:clipboard-copy"></Icon>
     </div>

@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+concurrency:
+  group: ${{ github.head_ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,7 +19,8 @@ jobs:
           node-version: "latest"
       - run: npm install -g pnpm
       - run: pnpm install
-      - run: sed -i "s|/docs|/docs/branches/${GITHUB_HEAD_REF}|g" nuxt.config.ts; cat nuxt.config.ts
+      - run: 'sed -i "s|baseURL: \"/\"|baseURL: \"/docs/branches/${{ github.head_ref }}\"|g" nuxt.config.ts'
+      - run: cat nuxt.config.ts
       - run: pnpm nuxt build --preset github_pages
       - run: |
           mkdir -p dist/branches/${{ github.head_ref }}

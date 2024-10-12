@@ -2,7 +2,7 @@
   <div
     class="front-page-card relative group"
     :class="checked ? 'checked' : ''"
-    @click="checked = !checked"
+    @click="cardClicked"
   >
     <div class="relative checkbox">
       <span
@@ -34,10 +34,13 @@
       </p>
     </div>
     <div v-if="!checked" class="overlay opacity-0 group-hover:opacity-100">
-      <span>Learn how we do it</span>
+      <div class="overlay-content not-prose">
+        <h3>{{ overlay.title }}</h3>
+        <p>{{ overlay.description }}</p>
+      </div>
       <Icon
-        class="w-7 h-7 bg-white transition-opacity duration-300 ease-out"
-        name="heroicons:check-20-solid"
+        class="w-8 h-8 bg-white transition-opacity duration-300 ease-out"
+        name="icon-park-outline:double-right"
       ></Icon>
     </div>
   </div>
@@ -46,14 +49,29 @@
 <script setup lang="ts">
 const checked = ref(false);
 
+interface Overlay {
+  title: string;
+  description: string;
+}
+
 interface Props {
   title: string;
   description: string;
   step: number;
+  url: string;
+  overlay: Overlay;
 }
 
 // Define props with TypeScript
 const props = defineProps<Props>();
+
+let cardClicked = () => {
+  checked.value = !checked.value;
+
+  if (checked.value) {
+    window.open(props.url, "_blank", "noopener,noreferrer");
+  }
+};
 </script>
 
 <style scoped lang="postcss">
@@ -80,15 +98,18 @@ const props = defineProps<Props>();
   @apply text-pretty;
 
   .overlay {
-    @apply flex items-center justify-center space-x-2 absolute inset-0;
+    @apply flex items-center justify-between space-x-2 absolute inset-0 px-10;
     @apply bg-gradient-to-r from-cyan-500 to-blue-500;
     @apply h-full w-full;
     @apply rounded-md;
     @apply transition-opacity duration-300 ease-in-out;
-    @apply text-white text-2xl font-bold;
 
-    * {
-      @apply text-inherit;
+    h3 {
+      @apply text-white text-2xl font-bold;
+    }
+
+    p {
+      @apply text-white text-lg;
     }
   }
 

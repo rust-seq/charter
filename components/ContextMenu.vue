@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <div id="links">
+    <div class="links">
       <NuxtLink
         class="flex flex-col space-y-1.5 items-center justify-center"
         to="/"
@@ -17,17 +17,19 @@
       </NuxtLink>
     </div>
 
-    <ColorMode />
+    <div class="links">
+      <ColorMode />
+      <a href="https://github.com/rust-seq/docs">
+        <Icon class="mx-auto w-6 h-6" name="mdi:github"></Icon>
+      </a>
+    </div>
   </nav>
 </template>
 
 <style scoped lang="postcss">
 nav {
-  #links {
-    @apply flex;
-    @apply flex-col;
-    @apply justify-start;
-    @apply items-center;
+  .links {
+    @apply flex flex-col justify-start items-center space-y-4;
   }
 
   @apply flex;
@@ -53,8 +55,6 @@ nav {
   @apply dark:border-slate-900;
 
   a {
-    margin-bottom: 20px;
-
     .label {
       @apply text-xs;
       @apply font-bold;
