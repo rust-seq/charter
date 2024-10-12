@@ -19,8 +19,8 @@
 
     <div class="links">
       <ColorMode />
-      <a href="https://github.com/rust-seq/docs">
-        <Icon class="mx-auto w-6 h-6" name="mdi:github"></Icon>
+      <a href="https://github.com/rust-seq/rust-seq.github.io">
+        <Icon class="mx-auto w-7 h-7" name="mdi:github"></Icon>
       </a>
     </div>
   </nav>
@@ -29,7 +29,7 @@
 <style scoped lang="postcss">
 nav {
   .links {
-    @apply flex flex-col justify-start items-center space-y-4;
+    @apply flex flex-col justify-start items-center space-y-6;
   }
 
   @apply flex;

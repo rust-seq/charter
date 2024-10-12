@@ -10,7 +10,7 @@
 
       <div class="get-involved">
         <FrontPageCard
-          step="1"
+          :step="1"
           title="Organizing the community around what needs built."
           description="Though our RFC process, we outline crates that need to be created
           along with who will create them."
@@ -22,7 +22,7 @@
         >
         </FrontPageCard>
         <FrontPageCard
-          step="2"
+          :step="2"
           title="Bringing the community together on Zulip."
           description="Foo bar baz quux qil."
           url="https://rustseq.zulipchat.com/join/coxb7c7b3bbahlfx7poeqqrd"

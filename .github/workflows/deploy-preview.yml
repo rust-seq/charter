@@ -19,7 +19,7 @@ jobs:
           node-version: "latest"
       - run: npm install -g pnpm
       - run: pnpm install
-      - run: 'sed -i "s|baseURL: \"/\"|baseURL: \"/docs/branches/${{ github.head_ref }}\"|g" nuxt.config.ts'
+      - run: 'sed -i "s|baseURL: \"/\"|baseURL: \"/branches/${{ github.head_ref }}\"|g" nuxt.config.ts'
       - run: cat nuxt.config.ts
       - run: pnpm nuxt build --preset github_pages
       - run: |
