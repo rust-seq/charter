@@ -1,8 +1,18 @@
 <template>
   <nav>
     <div id="links">
-      <NuxtLink to="/docs">
-        <LucideBookText class="mx-auto" />
+      <NuxtLink
+        class="flex flex-col space-y-1.5 items-center justify-center"
+        to="/"
+      >
+        <Icon class="mx-auto w-6 h-6" name="heroicons:home"></Icon>
+        <span class="label">Home</span>
+      </NuxtLink>
+      <NuxtLink
+        class="flex flex-col space-y-1.5 items-center justify-center"
+        to="/docs"
+      >
+        <Icon class="mx-auto w-6 h-6" name="heroicons:book-open"></Icon>
         <span class="label">Docs</span>
       </NuxtLink>
     </div>
