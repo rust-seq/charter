@@ -1,10 +1,17 @@
 <template>
   <div class="cursor-pointer">
-    <LucideMoon
+    <UIcon
+      class="w-6 h-6"
+      name="heroicons:moon-solid"
       v-if="colorMode.preference === Mode.Light"
       @click="colorMode.preference = Mode.Dark"
     />
-    <LucideSun v-else @click="colorMode.preference = Mode.Light" />
+    <UIcon
+      class="w-6 h-6"
+      name="heroicons:sun-solid"
+      v-else
+      @click="colorMode.preference = Mode.Light"
+    />
   </div>
 </template>
 

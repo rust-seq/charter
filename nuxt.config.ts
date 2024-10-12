@@ -4,19 +4,15 @@ import remarkGfm from "remark-gfm";
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   css: ["~/assets/css/main.postcss"],
-  devtools: { enabled: true },
-  app: {
-    baseURL: "/",
-  },
-  ssr: true,
+  app: { baseURL: "/" },
+  ssr: false,
   modules: [
-    "nuxt-lucide-icons",
     "@nuxt/content",
-    "@nuxt/ui",
     "@nuxt/icon",
-    "@nuxtjs/tailwindcss",
-    "@nuxtjs/color-mode",
     "@nuxt/image",
+    "@nuxt/ui",
+    "@nuxtjs/color-mode",
+    "@nuxtjs/tailwindcss",
   ],
   content: {
     documentDriven: false,
@@ -30,4 +26,5 @@ export default defineNuxtConfig({
       linkExactActiveClass: "active",
     },
   },
+  ui: {},
 });

@@ -10,6 +10,12 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@iconify-json/carbon": "^1.2.3",
+    "@iconify-json/heroicons-outline": "^1.2.0",
+    "@iconify-json/heroicons": "^1.2.1",
+    "@iconify-json/mdi": "^1.2.1",
+    "@iconify-json/octicon": "^1.2.1",
+    "@iconify-json/tabler": "^1.2.5",
     "@nuxt/content": "^2.13.2",
     "@nuxt/icon": "^1.5.5",
     "@nuxt/image": "^1.8.1",
@@ -19,19 +25,12 @@
     "change-case": "^5.4.4",
     "d3": "^7.9.0",
     "nuxt": "^3.13.2",
-    "nuxt-lucide-icons": "^1.0.5",
     "remark-gfm": "^4.0.0",
-    "vue": "latest",
-    "vue-router": "latest"
+    "vue-router": "latest",
+    "vue": "latest"
   },
   "packageManager": "pnpm@9.12.0+sha512.4abf725084d7bcbafbd728bfc7bee61f2f791f977fd87542b3579dcb23504d170d46337945e4c66485cd12d588a0c0e570ed9c477e7ccdd8507cf05f3f92eaca",
   "devDependencies": {
-    "@iconify-json/carbon": "^1.2.3",
-    "@iconify-json/heroicons": "^1.2.1",
-    "@iconify-json/heroicons-outline": "^1.2.0",
-    "@iconify-json/mdi": "^1.2.1",
-    "@iconify-json/octicon": "^1.2.1",
-    "@iconify-json/tabler": "^1.2.5",
     "@tailwindcss/typography": "^0.5.15"
   }
 }
