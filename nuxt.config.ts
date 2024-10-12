@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   app: {
     baseURL: "/",
   },
-  ssr: false,
+  ssr: true,
   modules: [
     "nuxt-lucide-icons",
     "@nuxt/content",
@@ -19,7 +19,7 @@ export default defineNuxtConfig({
     "@nuxt/image",
   ],
   content: {
-    documentDriven: true,
+    documentDriven: false,
     markdown: {
       remarkPlugins: { "remark-gfm": remarkGfm },
       rehypePlugins: [],

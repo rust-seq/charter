@@ -11,9 +11,9 @@
       <div class="get-involved">
         <FrontPageCard
           :step="1"
-          title="Organizing the community around what needs built."
-          description="Though our RFC process, we outline crates that need to be created
-          along with who will create them."
+          title="Organizing and indexing what needs building."
+          description="Though our RFC process, we nominate crates to be created
+          and decide who will build them."
           url="https://example.com"
           :overlay="{
             title: 'Learn how we do it!',
