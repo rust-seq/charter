@@ -1,0 +1,46 @@
+name: Deploy a Preview Site
+
+on:
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.head_ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "latest"
+      - run: npm install -g pnpm
+      - run: pnpm install
+      - run: 'sed -i "s|baseURL: \"/\"|baseURL: \"/branches/${{ github.head_ref }}\"|g" nuxt.config.ts'
+      - run: cat nuxt.config.ts
+      - run: pnpm nuxt build --preset github_pages
+      - run: |
+          mkdir -p dist/branches/${{ github.head_ref }}
+          mv .output/public/* dist/branches/${{ github.head_ref }} || exit 0
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          name: "Project Documentation"
+          path: "dist"
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}branches/${{ github.head_ref }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        with:
+          artifact_name: "Project Documentation"
