@@ -55,6 +55,7 @@ let cardClicked = () => {
   checked.value = !checked.value;
 
   if (checked.value) {
+    console.log(`Opening ${props.url}`);
     window.open(props.url, "_blank", "noopener,noreferrer");
   }
 };

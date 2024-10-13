@@ -9,23 +9,32 @@
       </p>
 
       <div class="get-involved">
-        <FrontPageCard :step="1" title="Organizing and indexing what needs building." description="Though our RFC process, we nominate crates to be created
-          and decide who will build them." url="https://example.com" :overlay="{
-            title: 'Learn how we do it!',
-            description: 'Click here to learn about our RFC process.',
-          }">
+        <FrontPageCard :step="1" title="Organizing the community around what needs building." description="Though our RFC process, we nominate crates to be created
+          and decide who will build them." url="https://github.com/rust-seq/rfcs" :overlay="{
+          title: 'Learn how we do it!',
+          description: 'Click here to learn about our RFC process.',
+        }">
         </FrontPageCard>
-        <FrontPageCard :step="2" title="Bringing the community together on Zulip." description="Foo bar baz quux qil."
+        <FrontPageCard :step="2" title="Building a new foundation for omics
+        libraries and tools." description="Crates within the stack work together
+        to provide a robust and performant foundation." url="/docs/get-started/values" :overlay="{
+          title: 'Read the values!', description: 'Click here to learn about our development standards and process.',
+        }"></FrontPageCard>
+        <FrontPageCard :step="3" title="Bringing the community together on
+        Zulip." description="A cross-cutting group of developers and users
+        gather on Zulip to discuss making our vision a reality."
           url="https://rustseq.zulipchat.com/join/coxb7c7b3bbahlfx7poeqqrd" :overlay="{
-            title: 'Join us!',
-            description: 'Click here to join the Zulip server.',
-          }"></FrontPageCard>
+          title: 'Join us!',
+          description: 'Click here to join the Zulip server.',
+        }
+          "></FrontPageCard>
       </div>
     </main>
   </div>
 </template>
 
-<script lang="ts"></script>
+<script lang="ts">
+</script>
 
 <style scoped lang="postcss">
 main {
