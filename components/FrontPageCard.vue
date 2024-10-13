@@ -1,36 +1,24 @@
 <template>
-  <div
-    class="front-page-card relative group"
-    :class="checked ? 'checked' : ''"
-    @click="cardClicked"
-  >
+  <div class="front-page-card relative group" :class="checked ? 'checked' : ''" @click="cardClicked">
     <div class="relative checkbox">
-      <span
-        class="absolute transition-opacity duration-300 ease-out"
-        :class="{ 'opacity-0': checked, 'opacity-100 delay-500': !checked }"
-      >
+      <span class="absolute transition-opacity duration-300 ease-out"
+        :class="{ 'opacity-0': checked, 'opacity-100 delay-500': !checked }">
         {{ step }}
       </span>
-      <Icon
-        class="w-7 h-7 bg-white transition-opacity duration-300 ease-out"
-        :class="{ 'opacity-0': !checked, 'opacity-100 delay-500': checked }"
-        name="heroicons:check-20-solid"
-      ></Icon>
+      <Icon class="w-7 h-7 bg-white transition-opacity duration-300 ease-out"
+        :class="{ 'opacity-0': !checked, 'opacity-100 delay-500': checked }" name="heroicons:check-20-solid"></Icon>
     </div>
     <div class="content">
       <h3 class="relative">
         {{ title }}
-        <span
-          class="absolute left-0 top-1/2 transform -translate-y-1/2 transition-all bg-slate-400 duration-300"
-          :class="checked ? 'w-full h-1 opacity-100' : 'w-0 opacity-0'"
-        ></span>
+        <span class="absolute left-0 top-1/2 transform -translate-y-1/2 transition-all bg-slate-400 duration-300"
+          :class="checked ? 'w-full h-1 opacity-100' : 'w-0 opacity-0'"></span>
       </h3>
       <p class="text-sm relative">
         {{ description }}
         <span
           class="absolute left-0 top-1/2 transform -translate-y-1/2 transition-all bg-slate-400 delay-100 duration-300"
-          :class="checked ? 'w-full h-1 opacity-100' : 'w-0 opacity-0'"
-        ></span>
+          :class="checked ? 'w-full h-1 opacity-100' : 'w-0 opacity-0'"></span>
       </p>
     </div>
     <div v-if="!checked" class="overlay opacity-0 group-hover:opacity-100">
@@ -38,10 +26,8 @@
         <h3>{{ overlay.title }}</h3>
         <p>{{ overlay.description }}</p>
       </div>
-      <Icon
-        class="w-8 h-8 bg-white transition-opacity duration-300 ease-out"
-        name="icon-park-outline:double-right"
-      ></Icon>
+      <Icon class="w-8 h-8 bg-white transition-opacity duration-300 ease-out" name="icon-park-outline:double-right">
+      </Icon>
     </div>
   </div>
 </template>
@@ -88,21 +74,19 @@ let cardClicked = () => {
   @apply dark:text-slate-50;
 
   @apply border;
-  @apply border-gray-100;
-  @apply dark:border-gray-950;
+  @apply border-slate-200;
+  @apply dark:border-slate-800;
 
   @apply rounded-lg;
-  @apply shadow-sm;
-  @apply hover:shadow-slate-200;
 
   @apply text-pretty;
 
   .overlay {
     @apply flex items-center justify-between space-x-2 absolute inset-0 px-10;
-    @apply bg-gradient-to-r from-cyan-500 to-blue-500;
+    @apply bg-gradient-to-r from-orange-500 to-amber-500;
     @apply h-full w-full;
     @apply rounded-md;
-    @apply transition-opacity duration-300 ease-in-out;
+    @apply transition-opacity duration-100 ease-in-out;
 
     h3 {
       @apply text-white text-2xl font-bold;
@@ -114,28 +98,34 @@ let cardClicked = () => {
   }
 
   .checkbox {
-    @apply transition-colors duration-300 ease-in delay-300;
     @apply flex items-center justify-center;
     @apply font-mono font-bold text-slate-300 text-2xl;
     @apply w-12 h-12;
     @apply rounded-full;
-    @apply bg-slate-100;
-    @apply border-2 border-slate-200;
+    @apply bg-slate-100 dark:bg-slate-950;
+    @apply border-2 border-slate-200 dark:border-slate-800;
   }
 
   .content {
     @apply ml-6;
-    @apply text-slate-500;
+    @apply text-slate-500 dark:text-slate-400;
 
     h3 {
       @apply m-0;
       @apply text-slate-900;
+      @apply dark:text-slate-200;
     }
 
     p {
       @apply m-0;
       @apply text-inherit;
     }
+  }
+
+  &:not(.checked) {
+    @apply shadow-sm;
+    @apply hover:shadow-amber-200;
+    @apply dark:hover:shadow-amber-800;
   }
 
   &.checked {

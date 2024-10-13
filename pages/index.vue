@@ -9,28 +9,17 @@
       </p>
 
       <div class="get-involved">
-        <FrontPageCard
-          :step="1"
-          title="Organizing and indexing what needs building."
-          description="Though our RFC process, we nominate crates to be created
-          and decide who will build them."
-          url="https://example.com"
-          :overlay="{
+        <FrontPageCard :step="1" title="Organizing and indexing what needs building." description="Though our RFC process, we nominate crates to be created
+          and decide who will build them." url="https://example.com" :overlay="{
             title: 'Learn how we do it!',
             description: 'Click here to learn about our RFC process.',
-          }"
-        >
+          }">
         </FrontPageCard>
-        <FrontPageCard
-          :step="2"
-          title="Bringing the community together on Zulip."
-          description="Foo bar baz quux qil."
-          url="https://rustseq.zulipchat.com/join/coxb7c7b3bbahlfx7poeqqrd"
-          :overlay="{
+        <FrontPageCard :step="2" title="Bringing the community together on Zulip." description="Foo bar baz quux qil."
+          url="https://rustseq.zulipchat.com/join/coxb7c7b3bbahlfx7poeqqrd" :overlay="{
             title: 'Join us!',
             description: 'Click here to join the Zulip server.',
-          }"
-        ></FrontPageCard>
+          }"></FrontPageCard>
       </div>
     </main>
   </div>
@@ -48,7 +37,7 @@ main {
   .get-involved {
     @apply flex flex-col space-y-8 justify-center;
     @apply py-6 my-2;
-    @apply border-t border-slate-100;
+    @apply border-t border-slate-100 dark:border-slate-800;
   }
 }
 </style>
